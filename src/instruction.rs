@@ -159,7 +159,7 @@ impl Display for Instruction {
                     reg2str(self.rd.unwrap()),
                     reg2str(self.rs2.unwrap())
                 ),
-                _ => unreachable!(),
+                _ => write!(f, "wth?"),
             },
             InstFormat::CaFormat => {
                 write!(
@@ -216,7 +216,7 @@ impl Display for Instruction {
                 | OpcodeKind::Priv(
                     PrivOpcode::MRET | PrivOpcode::SRET | PrivOpcode::WFI | PrivOpcode::SFENCE_VMA,
                 ) => write!(f, "{}", self.opc),
-                _ => unreachable!(),
+                _ => write!(f, "wth?"),
             },
         }
     }
